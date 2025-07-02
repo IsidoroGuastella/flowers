@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Una sorpresa per te</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .toccami-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-family: sans-serif;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+  <meta name="theme-color" content="#010113">
+</head>
+<body onclick="window.location.href='/flowers'">
+  <div class="night"></div>
+  <div class="toccami-text">Toccami :)</div>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/static/sw.js')
+      .then(function() { console.log("Service Worker registrato!"); });
+  }
+</script>
+
+</body>
+</html>
