@@ -9,8 +9,7 @@ self.addEventListener('install', function(e) {
         '/static/manifest.json',
         '/static/script.js',
         '/static/icons/icon-192.png',
-        '/static/icons/icon-512.png',
-        'start.html'
+        '/static/icons/icon-512.png'
       ]);
     })
   );
